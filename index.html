@@ -1,16 +1,12 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Latest cricket news, match updates and cricket stories.">
 
-  <meta
-    name="description"
-    content="Join our cricket prediction and match analysis channel for cricket insights, statistics and updates."
-  >
-
-  <title>Cricket Predictions | Join Telegram</title>
+  <title>Cricket News Hub</title>
 
   <style>
     * {
@@ -19,196 +15,256 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #ffffff;
-      background: #06120b;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .hero {
+    body {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
       background:
-        radial-gradient(
-          circle at 80% 20%,
-          rgba(34, 197, 94, 0.25),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 20% 80%,
-          rgba(16, 185, 129, 0.18),
-          transparent 30%
-        ),
-        linear-gradient(135deg, #06120b, #0b2416 55%, #030a06);
+        radial-gradient(circle at top, rgba(55, 95, 180, .25), transparent 35%),
+        linear-gradient(145deg, #05070b, #101522 55%, #05070b);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          120deg,
+          transparent 0%,
+          rgba(255,255,255,.025) 50%,
+          transparent 100%
+        );
     }
 
     .container {
-      width: 100%;
-      max-width: 1050px;
+      width: min(92%, 680px);
+      margin: auto;
+    }
+
+    header {
+      padding: 28px 0 18px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 105px;
+      height: 105px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.35);
+      box-shadow:
+        0 0 30px rgba(80,130,255,.25),
+        0 10px 35px rgba(0,0,0,.45);
+      background: rgba(255,255,255,.08);
+    }
+
+    .brand {
+      margin-top: 16px;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .tagline {
+      margin-top: 7px;
+      color: #aeb8ca;
+      font-size: 14px;
+    }
+
+    .hero {
+      margin-top: 20px;
+      padding: 28px 22px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 26px;
+      background: rgba(255,255,255,.055);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
       text-align: center;
     }
 
     .badge {
       display: inline-block;
-      padding: 9px 18px;
-      margin-bottom: 25px;
-
-      color: #86efac;
-      background: rgba(34, 197, 94, 0.10);
-      border: 1px solid rgba(74, 222, 128, 0.35);
-      border-radius: 50px;
-
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
-
-    /* Main Image */
-    .hero-image {
-      width: 100%;
-      max-width: 720px;
-      max-height: 420px;
-      object-fit: cover;
-
-      display: block;
-      margin: 0 auto 35px;
-
-      border-radius: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-
-      box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.45),
-        0 0 40px rgba(34, 197, 94, 0.12);
+      padding: 7px 12px;
+      border-radius: 30px;
+      background: rgba(70,130,255,.15);
+      border: 1px solid rgba(100,150,255,.25);
+      color: #9fc0ff;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     h1 {
-      font-size: clamp(42px, 8vw, 78px);
-      line-height: 1;
-      font-weight: 900;
-      margin-bottom: 22px;
+      margin-top: 17px;
+      font-size: clamp(30px, 8vw, 48px);
+      line-height: 1.08;
     }
 
-    h1 span {
-      color: #4ade80;
-    }
-
-    .subtitle {
-      max-width: 720px;
-      margin: 0 auto 35px;
-
-      color: #cbd5d0;
-      font-size: clamp(17px, 2.5vw, 21px);
+    .hero p {
+      margin: 14px auto 0;
+      max-width: 520px;
+      color: #b9c1cf;
       line-height: 1.6;
+      font-size: 15px;
     }
 
-    /* Telegram Button */
-    .join-btn {
-      display: inline-flex;
+    .telegram-btn {
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-
-      min-width: 280px;
-      padding: 18px 35px;
-
-      color: #ffffff;
+      gap: 9px;
+      width: 100%;
+      margin-top: 24px;
+      padding: 16px 20px;
+      border-radius: 15px;
+      color: #fff;
       text-decoration: none;
-
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      border-radius: 12px;
-
-      font-size: 18px;
       font-weight: 800;
-
-      box-shadow: 0 12px 35px rgba(34, 197, 94, 0.30);
-
-      transition: all 0.25s ease;
+      background: linear-gradient(135deg, #2489ff, #1769d4);
+      box-shadow: 0 12px 30px rgba(36,137,255,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
-    .join-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 45px rgba(34, 197, 94, 0.45);
+    .telegram-btn:active {
+      transform: scale(.98);
     }
 
-    .join-btn:active {
-      transform: translateY(-1px);
+    .section-title {
+      margin: 30px 4px 14px;
+      font-size: 20px;
+      font-weight: 800;
     }
 
-    /* Features */
-    .features {
-      margin-top: 65px;
-
+    .news-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 13px;
     }
 
-    .card {
-      padding: 30px 20px;
+    .news-card {
+      padding: 19px;
+      border-radius: 19px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
 
-      background: rgba(255, 255, 255, 0.045);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .news-card .label {
+      font-size: 11px;
+      color: #8fb4ff;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: .8px;
+    }
+
+    .news-card h2 {
+      margin-top: 8px;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    .news-card p {
+      margin-top: 7px;
+      color: #9fa9ba;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .feature {
+      padding: 20px 15px;
+      text-align: center;
       border-radius: 18px;
-
-      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.08);
     }
 
-    .icon {
-      font-size: 36px;
-      margin-bottom: 14px;
+    .feature-icon {
+      font-size: 27px;
     }
 
-    .card h3 {
-      font-size: 19px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #aebbb3;
+    .feature h3 {
+      margin-top: 9px;
       font-size: 14px;
-      line-height: 1.6;
     }
 
-    .disclaimer {
-      max-width: 750px;
-      margin: 40px auto 0;
-
-      color: #718078;
+    .feature p {
+      margin-top: 5px;
+      color: #929dad;
       font-size: 12px;
-      line-height: 1.6;
+      line-height: 1.4;
     }
 
-    .footer {
-      margin-top: 25px;
-      color: #53645a;
+    .about {
+      margin-top: 30px;
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .about h2 {
+      font-size: 20px;
+    }
+
+    .about p {
+      margin-top: 10px;
+      color: #aab3c2;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    footer {
+      padding: 32px 0 28px;
+      text-align: center;
+      color: #687282;
       font-size: 12px;
     }
 
-    /* Mobile */
-    @media (max-width: 700px) {
+    .glow {
+      position: fixed;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: .18;
+      pointer-events: none;
+      z-index: -1;
+    }
 
-      .hero {
-        padding: 35px 18px;
-      }
+    .glow.one {
+      top: 10%;
+      left: -80px;
+      background: #397cff;
+    }
 
-      .hero-image {
-        max-height: 300px;
-        border-radius: 16px;
-        margin-bottom: 30px;
-      }
+    .glow.two {
+      right: -90px;
+      bottom: 15%;
+      background: #6945ff;
+    }
 
+    @media (min-width: 600px) {
       .features {
-        grid-template-columns: 1fr;
-        margin-top: 45px;
+        grid-template-columns: repeat(4, 1fr);
       }
 
-      .join-btn {
-        width: 100%;
-        max-width: 350px;
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -216,91 +272,129 @@
 
 <body>
 
-  <main class="hero">
+  <div class="glow one"></div>
+  <div class="glow two"></div>
 
-    <div class="container">
+  <main class="container">
 
-      <div class="badge">
-        🏆 CRICKET PREDICTION CHANNEL
-      </div>
-
-      <!--
-        IMPORTANT:
-        Keep photo_2026-08-14_15-00-03.jpg
-        in the same folder as this index.html file.
-      -->
+    <header>
       <img
         src="photo_2026-08-14_15-00-03.jpg"
-        alt="Cricket Prediction Channel"
-        class="hero-image"
+        alt="Cricket News Logo"
+        class="logo"
       >
 
+      <div class="brand">Cricket News Hub</div>
+      <div class="tagline">Latest cricket stories & match updates</div>
+    </header>
+
+    <section class="hero">
+      <span class="badge">🏏 Cricket Updates</span>
+
       <h1>
-        Cricket <span>Predictions</span><br>
-        & Match Insights
+        Stay Updated.<br>
+        Stay Ahead.
       </h1>
 
-      <p class="subtitle">
-        Get cricket match analysis, player statistics, team updates
-        and prediction insights — all in one place.
+      <p>
+        Get the latest cricket news, match updates,
+        team stories and important cricket moments
+        in one place.
       </p>
 
-      <!-- TELEGRAM CHANNEL LINK -->
       <a
-        class="join-btn"
+        class="telegram-btn"
         href="https://t.me/+xffB1qSYaEY4OTE1"
         target="_blank"
         rel="noopener noreferrer"
       >
-        🚀 Join Telegram Channel
+        ✈️ Join Telegram Updates
       </a>
+    </section>
 
-      <section class="features">
+    <h2 class="section-title">Latest Updates</h2>
 
-        <div class="card">
-          <div class="icon">📊</div>
-          <h3>Match Analysis</h3>
-          <p>
-            Analysis based on team form, player performance
-            and available match statistics.
-          </p>
-        </div>
+    <section class="news-grid">
 
-        <div class="card">
-          <div class="icon">🏏</div>
-          <h3>Player Insights</h3>
-          <p>
-            Follow key player performances and important
-            statistics before upcoming matches.
-          </p>
-        </div>
+      <article class="news-card">
+        <div class="label">Match News</div>
+        <h2>Latest cricket match updates and important moments</h2>
+        <p>
+          Follow team news, match developments and major cricket stories.
+        </p>
+      </article>
 
-        <div class="card">
-          <div class="icon">⚡</div>
-          <h3>Fast Updates</h3>
-          <p>
-            Stay updated with cricket news, match information
-            and analysis.
-          </p>
-        </div>
+      <article class="news-card">
+        <div class="label">Team Updates</div>
+        <h2>Stay informed about your favourite teams</h2>
+        <p>
+          Get updates about squads, performances and upcoming matches.
+        </p>
+      </article>
 
-      </section>
+      <article class="news-card">
+        <div class="label">Player News</div>
+        <h2>What's happening with the stars of cricket?</h2>
+        <p>
+          Follow notable player performances and cricket news.
+        </p>
+      </article>
 
-      <p class="disclaimer">
-        Predictions and analysis are provided for informational and
-        entertainment purposes only. No result is guaranteed.
-        Please make responsible decisions and follow applicable laws
-        in your location.
-      </p>
+      <article class="news-card">
+        <div class="label">Cricket World</div>
+        <h2>Important stories from the cricket world</h2>
+        <p>
+          One place for interesting cricket updates and headlines.
+        </p>
+      </article>
 
-      <div class="footer">
-        © 2026 Cricket Predictions. All rights reserved.
+    </section>
+
+    <h2 class="section-title">What You'll Get</h2>
+
+    <section class="features">
+
+      <div class="feature">
+        <div class="feature-icon">📰</div>
+        <h3>News</h3>
+        <p>Fresh cricket stories</p>
       </div>
 
-    </div>
+      <div class="feature">
+        <div class="feature-icon">🏏</div>
+        <h3>Matches</h3>
+        <p>Match-related updates</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">⭐</div>
+        <h3>Players</h3>
+        <p>Player stories</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🌍</div>
+        <h3>World Cricket</h3>
+        <p>Global cricket news</p>
+      </div>
+
+    </section>
+
+    <section class="about">
+      <h2>About Cricket News Hub</h2>
+
+      <p>
+        Cricket News Hub brings together cricket stories,
+        match updates and general cricket information
+        in a simple mobile-friendly experience.
+      </p>
+    </section>
+
+    <footer>
+      © 2026 Cricket News Hub · All rights reserved.
+    </footer>
 
   </main>
 
 </body>
 </html>
-```
