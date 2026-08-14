@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b12">
-  <meta name="description" content="Latest cricket news, match updates and cricket stories.">
-
-  <title>Cricket News Hub</title>
+  <meta name="theme-color" content="#07090f">
+  <meta name="description" content="TANDAV - Latest cricket news, match updates and cricket stories.">
+  <title>TANDAV | Cricket News</title>
 
   <style>
     * {
@@ -24,23 +23,13 @@
       font-family: Arial, Helvetica, sans-serif;
       color: #fff;
       background:
-        radial-gradient(circle at top, rgba(55, 95, 180, .25), transparent 35%),
-        linear-gradient(145deg, #05070b, #101522 55%, #05070b);
+        radial-gradient(circle at 50% -10%, rgba(62, 108, 255, .30), transparent 38%),
+        linear-gradient(145deg, #05070b 0%, #0d121d 55%, #05070b 100%);
       overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(
-          120deg,
-          transparent 0%,
-          rgba(255,255,255,.025) 50%,
-          transparent 100%
-        );
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
@@ -48,73 +37,101 @@
       margin: auto;
     }
 
+    .background-glow {
+      position: fixed;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .15;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .glow-one {
+      top: 5%;
+      left: -110px;
+      background: #367cff;
+    }
+
+    .glow-two {
+      right: -120px;
+      bottom: 10%;
+      background: #6b42ff;
+    }
+
     header {
-      padding: 28px 0 18px;
       text-align: center;
+      padding: 32px 0 20px;
     }
 
     .logo {
-      width: 105px;
-      height: 105px;
+      width: 112px;
+      height: 112px;
       object-fit: cover;
       border-radius: 50%;
       border: 2px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.06);
       box-shadow:
-        0 0 30px rgba(80,130,255,.25),
-        0 10px 35px rgba(0,0,0,.45);
-      background: rgba(255,255,255,.08);
+        0 0 35px rgba(67,122,255,.25),
+        0 14px 40px rgba(0,0,0,.45);
     }
 
     .brand {
       margin-top: 16px;
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: .5px;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: 2px;
     }
 
     .tagline {
       margin-top: 7px;
-      color: #aeb8ca;
+      color: #aab4c5;
       font-size: 14px;
     }
 
     .hero {
-      margin-top: 20px;
-      padding: 28px 22px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 26px;
-      background: rgba(255,255,255,.055);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+      margin-top: 18px;
+      padding: 30px 22px;
       text-align: center;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.055);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 22px 65px rgba(0,0,0,.32);
     }
 
     .badge {
       display: inline-block;
-      padding: 7px 12px;
-      border-radius: 30px;
-      background: rgba(70,130,255,.15);
-      border: 1px solid rgba(100,150,255,.25);
-      color: #9fc0ff;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
+      padding: 8px 13px;
+      border-radius: 50px;
+      color: #a8c2ff;
+      background: rgba(72,123,255,.13);
+      border: 1px solid rgba(120,160,255,.22);
+      font-size: 11px;
+      font-weight: 800;
       letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    h1 {
-      margin-top: 17px;
-      font-size: clamp(30px, 8vw, 48px);
-      line-height: 1.08;
+    .hero h1 {
+      margin-top: 18px;
+      font-size: clamp(32px, 9vw, 52px);
+      line-height: 1.05;
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      color: #8db0ff;
     }
 
     .hero p {
-      margin: 14px auto 0;
       max-width: 520px;
-      color: #b9c1cf;
-      line-height: 1.6;
+      margin: 15px auto 0;
+      color: #b4bdcc;
       font-size: 15px;
+      line-height: 1.65;
     }
 
     .telegram-btn {
@@ -124,14 +141,19 @@
       gap: 9px;
       width: 100%;
       margin-top: 24px;
-      padding: 16px 20px;
-      border-radius: 15px;
+      padding: 17px 20px;
+      border-radius: 16px;
       color: #fff;
       text-decoration: none;
+      font-size: 15px;
       font-weight: 800;
-      background: linear-gradient(135deg, #2489ff, #1769d4);
-      box-shadow: 0 12px 30px rgba(36,137,255,.25);
-      transition: transform .2s ease, box-shadow .2s ease;
+      background: linear-gradient(135deg, #258cff, #1765d0);
+      box-shadow: 0 14px 32px rgba(37,140,255,.24);
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .telegram-btn:hover {
+      filter: brightness(1.08);
     }
 
     .telegram-btn:active {
@@ -139,31 +161,32 @@
     }
 
     .section-title {
-      margin: 30px 4px 14px;
-      font-size: 20px;
+      margin: 31px 4px 14px;
+      font-size: 21px;
       font-weight: 800;
     }
 
     .news-grid {
       display: grid;
+      grid-template-columns: 1fr;
       gap: 13px;
     }
 
     .news-card {
-      padding: 19px;
-      border-radius: 19px;
-      background: rgba(255,255,255,.05);
+      padding: 20px;
+      border-radius: 20px;
       border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.045);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
 
-    .news-card .label {
-      font-size: 11px;
-      color: #8fb4ff;
-      text-transform: uppercase;
+    .news-label {
+      color: #8eafff;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: .8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .news-card h2 {
@@ -174,9 +197,9 @@
 
     .news-card p {
       margin-top: 7px;
-      color: #9fa9ba;
+      color: #9da7b7;
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .features {
@@ -186,15 +209,15 @@
     }
 
     .feature {
-      padding: 20px 15px;
+      padding: 20px 12px;
       text-align: center;
       border-radius: 18px;
-      background: rgba(255,255,255,.045);
       border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
     }
 
     .feature-icon {
-      font-size: 27px;
+      font-size: 28px;
     }
 
     .feature h3 {
@@ -204,7 +227,7 @@
 
     .feature p {
       margin-top: 5px;
-      color: #929dad;
+      color: #8994a6;
       font-size: 12px;
       line-height: 1.4;
     }
@@ -213,8 +236,8 @@
       margin-top: 30px;
       padding: 22px;
       border-radius: 20px;
-      background: rgba(255,255,255,.045);
       border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
     }
 
     .about h2 {
@@ -223,48 +246,25 @@
 
     .about p {
       margin-top: 10px;
-      color: #aab3c2;
+      color: #a6afbe;
       font-size: 14px;
       line-height: 1.65;
     }
 
     footer {
-      padding: 32px 0 28px;
+      padding: 30px 0;
       text-align: center;
-      color: #687282;
+      color: #687386;
       font-size: 12px;
     }
 
-    .glow {
-      position: fixed;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: .18;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .glow.one {
-      top: 10%;
-      left: -80px;
-      background: #397cff;
-    }
-
-    .glow.two {
-      right: -90px;
-      bottom: 15%;
-      background: #6945ff;
-    }
-
     @media (min-width: 600px) {
-      .features {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
       .news-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features {
+        grid-template-columns: repeat(4, 1fr);
       }
     }
   </style>
@@ -272,34 +272,34 @@
 
 <body>
 
-  <div class="glow one"></div>
-  <div class="glow two"></div>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
 
   <main class="container">
 
     <header>
       <img
-        src="photo_2026-08-14_15-00-03.jpg"
-        alt="Cricket News Logo"
         class="logo"
+        src="photo_2026-08-14_15-00-03.jpg"
+        alt="TANDAV Logo"
       >
 
-      <div class="brand">Cricket News Hub</div>
-      <div class="tagline">Latest cricket stories & match updates</div>
+      <div class="brand">TANDAV</div>
+      <div class="tagline">Latest Cricket News & Updates</div>
     </header>
 
     <section class="hero">
-      <span class="badge">🏏 Cricket Updates</span>
+      <div class="badge">🏏 Cricket News</div>
 
       <h1>
-        Stay Updated.<br>
-        Stay Ahead.
+        Welcome to<br>
+        <span>TANDAV</span>
       </h1>
 
       <p>
-        Get the latest cricket news, match updates,
-        team stories and important cricket moments
-        in one place.
+        Stay updated with cricket news, match stories,
+        team updates and the latest happenings from
+        the world of cricket.
       </p>
 
       <a
@@ -308,7 +308,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        ✈️ Join Telegram Updates
+        ✈️ Join TANDAV on Telegram
       </a>
     </section>
 
@@ -317,34 +317,38 @@
     <section class="news-grid">
 
       <article class="news-card">
-        <div class="label">Match News</div>
-        <h2>Latest cricket match updates and important moments</h2>
+        <div class="news-label">Match News</div>
+        <h2>Latest cricket match updates</h2>
         <p>
-          Follow team news, match developments and major cricket stories.
+          Follow important match developments,
+          results and major cricket moments.
         </p>
       </article>
 
       <article class="news-card">
-        <div class="label">Team Updates</div>
-        <h2>Stay informed about your favourite teams</h2>
+        <div class="news-label">Team News</div>
+        <h2>Stay updated with your favourite teams</h2>
         <p>
-          Get updates about squads, performances and upcoming matches.
+          Team stories, squad updates and
+          important cricket developments.
         </p>
       </article>
 
       <article class="news-card">
-        <div class="label">Player News</div>
-        <h2>What's happening with the stars of cricket?</h2>
+        <div class="news-label">Player News</div>
+        <h2>Cricket player stories</h2>
         <p>
-          Follow notable player performances and cricket news.
+          Keep up with notable performances
+          and player-related cricket news.
         </p>
       </article>
 
       <article class="news-card">
-        <div class="label">Cricket World</div>
-        <h2>Important stories from the cricket world</h2>
+        <div class="news-label">World Cricket</div>
+        <h2>Stories from the cricket world</h2>
         <p>
-          One place for interesting cricket updates and headlines.
+          Discover interesting cricket updates
+          from around the world.
         </p>
       </article>
 
@@ -357,13 +361,13 @@
       <div class="feature">
         <div class="feature-icon">📰</div>
         <h3>News</h3>
-        <p>Fresh cricket stories</p>
+        <p>Latest cricket stories</p>
       </div>
 
       <div class="feature">
         <div class="feature-icon">🏏</div>
         <h3>Matches</h3>
-        <p>Match-related updates</p>
+        <p>Match updates</p>
       </div>
 
       <div class="feature">
@@ -374,24 +378,25 @@
 
       <div class="feature">
         <div class="feature-icon">🌍</div>
-        <h3>World Cricket</h3>
+        <h3>World</h3>
         <p>Global cricket news</p>
       </div>
 
     </section>
 
     <section class="about">
-      <h2>About Cricket News Hub</h2>
+      <h2>About TANDAV</h2>
 
       <p>
-        Cricket News Hub brings together cricket stories,
-        match updates and general cricket information
+        TANDAV is a cricket-news focused platform
+        bringing together cricket stories, match
+        updates, team news and player developments
         in a simple mobile-friendly experience.
       </p>
     </section>
 
     <footer>
-      © 2026 Cricket News Hub · All rights reserved.
+      © 2026 TANDAV · Cricket News & Updates
     </footer>
 
   </main>
